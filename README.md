@@ -17,7 +17,7 @@ The only thing to note is that a specific version of L4T and related source code
 ## Install Dependencies
 
 	sudo apt update && sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
-	sudo apt install -y build-essential bc libncurses5-dev lbzip2 pkg-config flex bison libssl-dev
+	sudo apt install -y build-essential bc libncurses5-dev lbzip2 pkg-config flex bison libssl-dev qemu-user-static
 
 ## Create build folder
 

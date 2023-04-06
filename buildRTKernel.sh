@@ -17,12 +17,13 @@ mkdir ~/nvidia-rt
 cd ~/nvidia-rt 
 
 tput setaf 2
-echo "Download files"
+echo "Download files from links below"
+echo "https://developer.nvidia.com/downloads/embedded/l4t/r35_release_v3.1/release/jetson_linux_r35.3.1_aarch64.tbz2"
+echo "https://developer.nvidia.com/downloads/embedded/l4t/r35_release_v3.1/release/tegra_linux_sample-root-filesystem_r35.3.1_aarch64.tbz2"
+echo "https://developer.nvidia.com/downloads/embedded/l4t/r35_release_v3.1/sources/public_sources.tbz2"
+echo "https://developer.nvidia.com/embedded/jetson-linux/bootlin-toolchain-gcc-93"
+echo "and put them into ~/nvidia-rt folder"
 tput sgr0
-wget https://developer.nvidia.com/downloads/embedded/l4t/r35_release_v3.1/release/jetson_linux_r35.3.1_aarch64.tbz2
-wget https://developer.nvidia.com/downloads/embedded/l4t/r35_release_v3.1/release/tegra_linux_sample-root-filesystem_r35.3.1_aarch64.tbz2
-wget https://developer.nvidia.com/downloads/embedded/l4t/r35_release_v3.1/sources/public_sources.tbz2
-wget https://developer.nvidia.com/embedded/jetson-linux/bootlin-toolchain-gcc-93
 
 tput setaf 2
 echo "Extract files"

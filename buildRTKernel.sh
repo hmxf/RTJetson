@@ -23,7 +23,9 @@ echo "https://developer.nvidia.com/downloads/embedded/l4t/r35_release_v3.1/relea
 echo "https://developer.nvidia.com/downloads/embedded/l4t/r35_release_v3.1/sources/public_sources.tbz2"
 echo "https://developer.nvidia.com/embedded/jetson-linux/bootlin-toolchain-gcc-93"
 echo "and put them into ~/nvidia-rt folder"
+echo "Press Return Key to continue........"
 tput sgr0
+read
 
 tput setaf 2
 echo "Extract files"
@@ -56,7 +58,9 @@ echo "Kernel Features -> Preemption  Model: Fully Preemptible Kernel (RT)"
 echo "Kernel Features -> Timer frequency: 1000 HZ "
 echo "If not, choose them in menuconfig interface."
 echo "Else, quit menuconfig and compile will auto start."
+echo "Press Return Key to continue........"
 tput sgr0
+read
 make ARCH=arm64 O=$TEGRA_KERNEL_OUT menuconfig 
 make ARCH=arm64 O=$TEGRA_KERNEL_OUT -j$(nproc) 
 

@@ -14,6 +14,8 @@ Since L4T and related source codes are common to all NVIDIA development boards, 
 
 The only thing to note is that a specific version of L4T and related source codes only support the development platforms supported by this version of L4T, and cross-version hardware support is hard to guarantee.
 
+**Modify the $BUILD_DIR Parameter in the two scripts before you use them if you need a different Build Path other than ~/RTJetsonBuild.**
+
 ## Install Dependencies
 
 	sudo apt update && sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
@@ -21,8 +23,8 @@ The only thing to note is that a specific version of L4T and related source code
 
 ## Create build folder
 
-	mkdir ~/nvidia-rt 
-	cd ~/nvidia-rt 
+	mkdir ~/RTJetsonBuild 
+	cd ~/RTJetsonBuild
 
 ## Download the following files in the nvidia-rt folder:
 
@@ -54,7 +56,7 @@ The only thing to note is that a specific version of L4T and related source code
 
 	TEGRA_KERNEL_OUT=kernel_out 
 	mkdir $TEGRA_KERNEL_OUT 
-	export CROSS_COMPILE=~/nvidia-rt/bin/aarch64-buildroot-linux-gnu-
+	export CROSS_COMPILE=~/RTJetsonBuild/bin/aarch64-buildroot-linux-gnu-
 	make ARCH=arm64 O=$TEGRA_KERNEL_OUT tegra_defconfig 
 	make ARCH=arm64 O=$TEGRA_KERNEL_OUT menuconfig 
 
@@ -72,11 +74,11 @@ The only thing to note is that a specific version of L4T and related source code
 
 ## Copy results
 
-	sudo cp kernel_out/arch/arm64/boot/Image ~/nvidia-rt/Linux_for_Tegra/kernel/Image
-	sudo cp kernel_out/arch/arm64/boot/Image.gz ~/nvidia-rt/Linux_for_Tegra/kernel/Image.gz
-	sudo cp -r kernel_out/arch/arm64/boot/dts/nvidia/* ~/nvidia-rt/Linux_for_Tegra/kernel/dtb/ 
-	sudo make ARCH=arm64 O=$TEGRA_KERNEL_OUT modules_install INSTALL_MOD_PATH=~/nvidia-rt/Linux_for_Tegra/rootfs/ 
-	cd ~/nvidia-rt/Linux_for_Tegra/rootfs/ 
+	sudo cp kernel_out/arch/arm64/boot/Image ~/RTJetsonBuild/Linux_for_Tegra/kernel/Image
+	sudo cp kernel_out/arch/arm64/boot/Image.gz ~/RTJetsonBuild/Linux_for_Tegra/kernel/Image.gz
+	sudo cp -r kernel_out/arch/arm64/boot/dts/nvidia/* ~/RTJetsonBuild/Linux_for_Tegra/kernel/dtb/ 
+	sudo make ARCH=arm64 O=$TEGRA_KERNEL_OUT modules_install INSTALL_MOD_PATH=~/RTJetsonBuild/Linux_for_Tegra/rootfs/ 
+	cd ~/RTJetsonBuild/Linux_for_Tegra/rootfs/ 
 	sudo tar --owner root --group root -cjf kernel_supplements.tbz2 lib/modules 
 	sudo mv kernel_supplements.tbz2  ../kernel/ 
 

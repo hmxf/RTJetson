@@ -97,7 +97,7 @@ The only thing to note is that a specific version of L4T and related source code
 	    sudo ./jetson-disk-image-creator.sh -o nvidia-rt.img -b jetson-agx-xavier-devkit -d SD
         sudo ./create-jetson-nano-sd-card-image.sh -o jetson_nano.img -s 12G -r 100
 
-- Set AGX Xavier at Recovery Mode and flash image to Xavier's onboard EMMC
+- Set AGX Xavier at Recovery Mode and directly flash image to Xavier's onboard EMMC
 
 	    cd tools
         sudo ./flash.sh jetson-agx-xavier-devkit mmcblk0p1

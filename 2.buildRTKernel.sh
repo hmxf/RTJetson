@@ -4,7 +4,7 @@
 # Green is 2
 # Reset is sgr0
 
-BUILD_DIR=~/RTJetsonBuild
+BUILD_DIR=~/RTJetsonBuild/R35.3.1
 cd $BUILD_DIR
 
 tput setaf 2

@@ -8,14 +8,14 @@ tput setaf 2
 echo "Install Dependencies"
 tput sgr0
 sudo apt update && sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
-sudo apt install -y build-essential bc libncurses5-dev lbzip2 pkg-config flex bison libssl-dev
+sudo apt install -y build-essential bc libncurses5-dev lbzip2 pkg-config flex bison libssl-dev qemu-user-static
 
-BUILD_DIR=~/RTJetsonBuild
+BUILD_DIR=~/RTJetsonBuild/R35.3.1
 tput setaf 2
 echo "Create build folder to $BUILD_DIR"
 tput sgr0
 if [ ! -d "$BUILD_DIR" ]; then
-    mkdir $BUILD_DIR
+    mkdir -p $BUILD_DIR
 fi
 cd $BUILD_DIR
 
